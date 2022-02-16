@@ -30,6 +30,9 @@ int main()
 
 void rotate(int arr[], int n)
 {
-   reverse(arr,arr+n);
-   reverse(arr+1,arr+n);
+        int x = arr[n - 1], i;
+    for (i = n - 1; i > 0; i--)
+    arr[i] = arr[i - 1];
+    arr[0] = x;
+
 }
