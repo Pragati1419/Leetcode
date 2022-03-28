@@ -67,7 +67,7 @@ class Solution{
            temp -> next = NULL;
            return head;
        }
-       
+      
        Node* curr = head;
        while(curr -> next != NULL) {
            curr = curr -> next;
