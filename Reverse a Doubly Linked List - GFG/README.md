@@ -1,5 +1,5 @@
 # Reverse a Doubly Linked List
-## Easy 
+##  Easy 
 <div class="problem-statement">
                 <p></p><p><span style="font-size:18px">Given a doubly linked list of n elements. The task is to <strong>reverse </strong>the doubly linked list.</span></p>
 
