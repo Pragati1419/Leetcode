@@ -1,5 +1,5 @@
 # Nth node from end of linked list
-## Easy 
+##  Easy 
 <div class="problem-statement">
                 <p></p><p><span style="font-size:18px">Given a linked list consisting of <strong>L</strong> nodes and given a number <strong>N</strong>. The task is to find the <strong>N</strong><sup>th</sup> node from the end of the linked list.</span></p>
 
