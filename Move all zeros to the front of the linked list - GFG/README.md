@@ -1,5 +1,5 @@
 # Move all zeros to the front of the linked list
-## Easy 
+##  Easy 
 <div class="problem-statement">
                 <p></p><p><span style="font-size:18px">Given a linked list, the task is to move all 0s to the front of the linked list. The order of all another element except 0 should be same after rearrangement. </span></p>
 
