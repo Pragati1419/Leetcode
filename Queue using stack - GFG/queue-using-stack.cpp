@@ -10,28 +10,25 @@ class Queue {
 public:
 
     void enqueue(int x) {
-        while(!input.empty()){
-            output.push(input.top());
-            input.pop();
-        }
-        
         input.push(x);
-        while (!output.empty()) {
-            input.push(output.top());
-            output.pop();
-        }
     }
 
     int dequeue() {
-        if (input.empty()) {
-            cout << "Q is Empty";
+        if (input.empty() && output.empty()) {
+            cout << "Q is empty";
             return 0;
-        }
-
-        
-        int x = input.top();
-        input.pop();
-        return x;
+    }
+    
+    if (output.empty()) {
+            while (!input.empty()) {
+                output.push(input.top());
+                input.pop();
+                
+            }
+    }
+    int x=output.top();
+    output.pop();
+    return x;
     }
 };
 
