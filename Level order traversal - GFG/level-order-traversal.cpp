@@ -45,37 +45,22 @@ class Solution
     vector<int> levelOrder(Node* node)
     {
       //Your code here
-      queue<Node*> q;
-        vector<int> res;
-        //when root is NULL then return blank array
-        if(node==NULL){
-            return res;
-        }
-        //initial push root with an NULL
-        q.push(node);
-        q.push(NULL);
-        while(!q.empty()){
-            //get the front node of queue
-            Node* temp=q.front();
-            q.pop();
-            if(temp==NULL){
-                if(!q.empty()){
-                     q.push(NULL);
-                }
-            }
-            //else we fetch the left right child and push in queue and put the node data in ans array
-            else{
-                res.push_back(temp->data);
-                if(temp->left){
-                    q.push(temp->left);
-                }
-                if(temp->right){
-                    q.push(temp->right);
-                }
-            }
-        }
-        return res;
+      vector<int>v;
+      queue<Node*>q;
+      q.push(node);
+      
+      while(q.empty()==false){
+      Node* temp=q.front();
+         q.pop();
+         v.push_back(temp->data);
+         if(temp->left != NULL)
+         q.push(temp->left);
+         if(temp->right != NULL)
+         q.push(temp->right);
+     }
+     return v;
     }
+    
 };
 
 // { Driver Code Starts.
