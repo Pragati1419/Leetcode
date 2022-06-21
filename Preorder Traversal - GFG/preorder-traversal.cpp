@@ -132,24 +132,14 @@ vector <int> preorder(Node* root)
 {
    
    vector<int>ans;
-  stack<Node*>s;
-  
-  // Your code 
-  if(root==NULL)
-  return ans;
-  
-  s.push(root);
-  while(!s.empty()){
-      Node* curr=s.top();
-      s.pop();
-      
-      cout<<curr->data<<" ";
-      if(curr->right)
-      s.push(curr->right);
-      
-      if(curr->left)
-      s.push(curr->left);
-  }
-  
-  return ans;
+   vector <int> v;
+ if(root==NULL)
+ {
+     return v ;
+ }
+ cout<<root->data<<" ";
+  preorder(root->left);
+   preorder(root->right);
+   
+
 }
