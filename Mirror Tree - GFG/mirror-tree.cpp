@@ -112,14 +112,11 @@ class Solution {
     // Function to convert a binary tree into its mirror tree.
     void mirror(Node* node) {
         // code here
-        if(node)
-       {
-           Node *temp=node->left;
-           node->left=node->right;
-           node->right=temp;
-           mirror(node->left);
-           mirror(node->right);
-       }
+        if(node==NULL)
+        return;
+        swap(node->left,node->right);
+        mirror(node->right);
+        mirror(node->left);
     }
 };
 
