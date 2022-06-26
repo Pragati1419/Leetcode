@@ -11,31 +11,20 @@ class Solution
     void sort012(int a[], int n)
     {
         // code here 
-      int zero=0;
-      int one=0;
-      int two=0;
-      
-      for(int i=0;i<n;i++){
-          if(a[i]==0){
-              zero++;
-          }
-          else if(a[i]==1){
-              one++;
-          }
-          else{
-              two++;
-          }
-      }
-      
-      for(int i=0;i<zero;i++){
-          a[i]=0;
-      }
-      for(int i=zero;i<zero+one;i++){
-          a[i]=1;
-      }
-      for(int i=zero+one;i<zero+one+two;i++){
-          a[i]=2;
-      }
+      int i = 0, j = 0, k = n-1;
+
+        while(j <= k) {
+            if(a[j] == 1) {
+                j++;
+            } else if(a[j] == 0) {
+                swap(a[i], a[j]);
+                i++;
+                j++;
+            } else {
+                swap(a[j], a[k]);
+                k--;
+            }
+        }
     }
     
 };
