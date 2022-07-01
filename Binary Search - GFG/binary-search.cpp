@@ -12,13 +12,27 @@ class Solution {
   public:
     int binarysearch(int arr[], int n, int k) {
         // code here
-        int i;
-        for(int i=0;i<n;i++){
-            if(arr[i]==k){
-                return i;
-            }
+        int min=0;
+        int max=n-1;
+        int mid=(min+max)/2;
+        
+        if(arr[mid]==k){
+            return mid;
         }
-        return -1;
+        
+        if(arr[mid]<k){
+            
+        for(int i=mid;i<=max;i++)
+           {if(arr[i]==k)
+           return i;}
+       }
+       if(arr[mid]>k)
+       {for(int i=mid;i>=min;i--)
+           {if(arr[i]==k)
+           return i;
+           }
+       }
+       return -1;
     }
 };
 
