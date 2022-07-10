@@ -1,5 +1,5 @@
 # Determine if Two Trees are Identical
-## Easy 
+##  Easy 
 <div class="problem-statement">
                 <p></p><p><span style="font-size:18px">Given two binary trees, the task is to find if both of them are identical or not.&nbsp; </span></p>
 
