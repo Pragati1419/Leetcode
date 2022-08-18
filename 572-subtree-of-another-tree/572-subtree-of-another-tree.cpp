@@ -12,21 +12,21 @@
 class Solution {
 public:
     
-    bool solve(TreeNode* root, TreeNode* subRoot)
+    bool treeissame(TreeNode* root, TreeNode* subRoot)
     {
         if(!root&&!subRoot)
             return true;
         if(!root||!subRoot||root->val!=subRoot->val)
             return false;
-        int lh=solve(root->left,subRoot->left);
-        int rh=solve(root->right,subRoot->right);
+        int lh=treeissame(root->left,subRoot->left);
+        int rh=treeissame(root->right,subRoot->right);
         return lh&&rh;
     }
     
     bool isSubtree(TreeNode* root, TreeNode* subRoot) {
         if(!root||!subRoot)
             return false;
-        if (solve(root,subRoot)){
+        if (treeissame(root,subRoot)){
             return true;
         }
         return isSubtree(root->left,subRoot)||isSubtree(root->right,subRoot);
