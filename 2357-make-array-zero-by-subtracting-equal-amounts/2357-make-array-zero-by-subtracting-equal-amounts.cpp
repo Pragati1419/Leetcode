@@ -1,6 +1,7 @@
 class Solution {
 public:
     int minimumOperations(vector<int>& nums) {
+        /* Burute Force
         int n = nums.size();
          sort(nums.begin(), nums.end()); 
         int count=0;
@@ -18,6 +19,14 @@ public:
         }
         return count;
         
+        */
         
+        //optimization using set
+        
+         unordered_set<int>s;
+        for(auto it :nums)
+            if(it!=0)
+                s.insert(it);
+        return s.size();
     }
 };
