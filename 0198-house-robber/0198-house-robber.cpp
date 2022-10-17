@@ -9,6 +9,14 @@ public:
             dp[i] = max(nums[i-1] + dp[i-2],dp[i-1]);
         }
         return dp[n];
-
+        
+      /*  int houserob(vector<int>& nums,int index){
+        if(index>=nums.size())
+            return 0;
+        return max(nums[index]+houserob(nums,index+2),houserob(nums,index+1));
     }
+    int rob(vector<int>& nums) {
+        return houserob(nums,0);*/
+    }
+    
 };
