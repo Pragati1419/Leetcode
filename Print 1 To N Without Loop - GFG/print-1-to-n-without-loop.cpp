@@ -10,9 +10,15 @@ class Solution{
     void printNos(int N)
     {
         //Your code here
-        for(int i=1;i<=N;i++){
-            cout<<i<<" ";
-        }
+       if(N>0)
+     
+       {
+       
+        printNos(N-1);
+        
+        cout<<N<<" ";
+       }
+        
     }
 };
 
