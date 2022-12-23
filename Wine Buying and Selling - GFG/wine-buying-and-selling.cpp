@@ -16,9 +16,9 @@ class Solution{
 
         for(int i=0; i<N; i++){
 
-           ans+=abs(sum);
-
-           sum+=Arr[i];         
+           
+           sum+=Arr[i]; 
+            ans+=abs(sum);
 
         }
 
