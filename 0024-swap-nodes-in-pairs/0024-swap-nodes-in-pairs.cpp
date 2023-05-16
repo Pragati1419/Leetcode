@@ -10,19 +10,12 @@
  */
 class Solution {
 public:
-    
-     ListNode* swapAdjacentNodes(ListNode* head) {
-        if(head==NULL || head->next==NULL)
-            return head;
-         ListNode *first=head;
-         ListNode *second=head->next;
-         ListNode *tempList = swapAdjacentNodes(second->next);
-         first->next=tempList;
-         second->next=first;
-         return second;
-    }
-    
     ListNode* swapPairs(ListNode* head) {
-        return swapAdjacentNodes(head);
+      if (head==NULL || head->next==NULL)
+          return head;
+       ListNode *temp = head->next;
+        head->next = swapPairs(head->next->next);
+         temp->next = head;
+        return temp;
     }
 };
