@@ -10,7 +10,7 @@
  */
 class Solution {
 public:
-     ListNode* merge(ListNode* l1, ListNode* l2)
+     ListNode* mergeList(ListNode* l1, ListNode* l2)
     {
         ListNode dummy(0);
         ListNode* cur = &dummy;
@@ -38,27 +38,23 @@ public:
             
         return dummy.next;
     }
-    
-    
     ListNode* sortList(ListNode* head) {
-       if (head == NULL || head->next == NULL)
-            return head;
+      if(head==NULL || head->next==NULL)
+          return head;
         
-        ListNode* slow = head;
-        ListNode* fast = head->next;
+        ListNode *temp=head;
+        ListNode *slow=head;
+        ListNode *fast=head;
         
-        while (fast != NULL && fast->next != NULL)
-        {
-            slow = slow->next;
-            fast = fast->next->next;
+        while(fast && fast->next){
+            temp=slow;
+            slow=slow->next;
+            fast=fast->next->next;
+            
         }
-       
-        fast = slow->next;
-        slow->next = NULL;
-        
-        return merge(sortList(head), sortList(fast));
-    
-    
- 
+        temp->next=NULL;
+        ListNode *l1 = sortList(head);
+        ListNode *l2 = sortList(slow);
+        return mergeList(l1,l2);
     }
 };
