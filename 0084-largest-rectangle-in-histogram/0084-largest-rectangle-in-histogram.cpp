@@ -1,71 +1,37 @@
 class Solution {
 public:
     int largestRectangleArea(vector<int>& heights) {
-        stack<pair<int,int>> s;
-        stack<pair<int,int>> ss;
-        vector<int> right;
-         vector<int> left;
-        int index=heights.size();
-        for(int i=heights.size()-1; i>=0; i--){
-            if(s.size()==0){
-                right.push_back(index);
-            }
-            else if(s.size()>0 && s.top().first<heights[i]){
-                right.push_back(s.top().second);
-            }
-            else if(s.size()>0  && s.top().first>=heights[i]){
-                while(s.size()>0  && s.top().first>=heights[i]){
-                    s.pop();
-                }
-                if(s.size()==0){
-                    right.push_back(index);
-                }
-                else{
-                    right.push_back(s.top().second);
-        
-                }
-            }
-            s.push({heights[i],i});
-
+         int n = heights.size();
+    stack<int> s;
+    vector<int> left(n), right(n);
+    
+    // Calculate Next Greater Element (NGE) to the left
+    for (int i = 0; i < n; i++) {
+        while (!s.empty() && heights[s.top()] >= heights[i]) {
+            s.pop();
         }
-        reverse(right.begin(),right.end());
-
-       
-
-
-          for(int i=0; i<heights.size(); i++){
-            if(ss.size()==0){
-                left.push_back(-1);
-            }
-            else if(ss.size()>0 && ss.top().first<heights[i]){
-                left.push_back(ss.top().second);
-            }
-            else if(ss.size()>0  && ss.top().first>=heights[i]){
-                while(ss.size()>0  && ss.top().first>=heights[i]){
-                    ss.pop();
-                }
-                if(ss.size()==0){
-                    left.push_back(-1);
-                }
-                else{
-                    left.push_back(ss.top().second);
-        
-                }
-            }
-            ss.push({heights[i],i});
-
+        left[i] = s.empty() ? -1 : s.top();
+        s.push(i);
+    }
+    
+    while (!s.empty()) 
+        s.pop();  // Clear the stack
+    
+    // Calculate Next Greater Element (NGE) to the right
+    for (int i = n - 1; i >= 0; i--) {
+        while (!s.empty() && heights[s.top()] >= heights[i]) {
+            s.pop();
         }
-
-
-       vector<int> ans;
-        
-
-        for(int i=0; i<heights.size(); i++){
-          int z=heights[i]*(right[i]-left[i]-1);
-            ans.push_back(z);
-        }
-        sort(ans.begin(), ans.end());
-        return ans[heights.size()-1];
-  
+        right[i] = s.empty() ? n : s.top();
+        s.push(i);
+    }
+    
+    int maxArea = 0;
+    for (int i = 0; i < n; i++) {
+        int area = heights[i] * (right[i] - left[i] - 1);
+        maxArea = max(maxArea, area);
+    }
+    
+    return maxArea;
     }
 };
