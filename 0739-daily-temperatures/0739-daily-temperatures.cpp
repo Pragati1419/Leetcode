@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<int> dailyTemperatures(vector<int>& temperatures) {
-        int n =  temperatures.size();
+     int n =  temperatures.size();
         vector<int>ans(n,0);
         stack<int>s;
      for(int i = n-1; i>=0; --i){
@@ -13,6 +13,5 @@ public:
         }
         
         return ans;
-        }
-    
+    }
 };
