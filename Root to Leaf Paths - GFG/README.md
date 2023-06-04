@@ -41,7 +41,5 @@ Your task is to complete the function&nbsp;<strong>Paths()</strong>&nbsp;that ta
 <span style="font-size:18px"><strong>Note:&nbsp;</strong>H is the height of the tree.</span></p>
 
 <p><span style="font-size:18px"><strong>Constraints:</strong><br>
-1&lt;=N&lt;=10<sup>3</sup></span></p>
-
-<p><strong>Note:&nbsp;</strong>The <strong>Input/Ouput</strong> format and <strong>Example</strong> given, are used for the system's internal purpose, and should be used by a user for <strong>Expected Output</strong> only. As it is a function problem, hence a user should not read any input from the stdin/console. The task is to complete the function specified, and not to write the full code.</p>
+1&lt;=N&lt;=10<sup>3</sup></span>.</p>
 </div>
