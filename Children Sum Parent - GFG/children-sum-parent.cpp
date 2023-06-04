@@ -108,17 +108,11 @@ class Solution{
     int isSumProperty(Node *root)
     {
      // Add your code here
-     if(root==NULL) return 1; 
-        int child=0;
-        if(root->left) child+=root->left->data;
-        if(root->right) child+=root->right->data;
-        if(root->left || root->right){
-            if(child!=root->data)
-               return 0;
-        }
-        int p=isSumProperty(root->left);
-        int q=isSumProperty(root->right);
-        return p && q;
+        if(!root ||(!root->left&&!root->right)) return true;
+      if(root->left) root->data-=root->left->data;
+      if(root->right) root->data-=root->right->data;
+      if(root->data!=0) return false;
+      return isSumProperty(root->left)&&isSumProperty(root->right);
     }
 };
 
