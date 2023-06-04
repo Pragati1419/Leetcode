@@ -129,21 +129,22 @@ struct Node
 
 /* The function should print all the paths from root
  to leaf nodes of the binary tree */
- void fun(Node *root,vector<int>v,vector<vector<int>>&ans){
-   if(root==NULL)return;
-   v.push_back(root->data);
-   if(root->left==NULL && root->right==NULL){
-       ans.push_back(v);
-       return;
-   }
-   fun(root->left,v,ans);
-   fun(root->right,v,ans);
-}
+ void findPath(Node* root ,vector<int>&x  , vector<vector<int>>&v ){
+     if(!root)
+     return;
+     x.push_back(root->data);
+     if(root->left==NULL && root->right==NULL)
+         v.push_back(x);
+         findPath(root->left, x,v);
+         findPath(root->right,x,v);
+         x.pop_back();
+     }
+ 
 vector<vector<int>> Paths(Node* root)
 {
-   vector<vector<int>>ans;
-   vector<int>v;
-   fun(root,v,ans);
-   return ans;
+    // Code here
+    vector<vector<int>>v;
+    vector<int>x;
+    findPath(root , x, v);
+    return v;
 }
-    
