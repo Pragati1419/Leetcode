@@ -111,8 +111,7 @@ struct Node{
 
 /*  Function which returns the  root of 
     the flattened linked list. */
-    
-    Node *mergeList(Node *a , Node *b){
+ Node *mergeList(Node *a , Node *b){
         Node *temp=new Node(0);
         Node *res=temp;
         while(a!=NULL && b!=NULL){
