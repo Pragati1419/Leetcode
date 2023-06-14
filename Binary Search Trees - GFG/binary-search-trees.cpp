@@ -14,12 +14,11 @@ class Solution {
   public:
     bool isBSTTraversal(vector<int>& nums) {
         // your code here
-        for(int i=0;i<nums.size();i++){
+         for(int i=0;i<nums.size();i++){
             if(nums[i]<=nums[i-1])
             return false;
         }
             return true;
-        
     }
 };
 
