@@ -14,12 +14,10 @@ public:
     void fun(TreeNode* root , int level , vector<int>&v){
         if(root==NULL)
             return;
-        if(v.size()==level){
+        if(v.size()==level)
             v.push_back(root->val);
-        }
-        else{
+        else
             v[level]+=root->val;
-        }
         fun(root->left,level+1,v);
         fun(root->right,level+1,v);
     }
