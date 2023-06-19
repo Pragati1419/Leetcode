@@ -35,7 +35,6 @@ public:
             pre=curr;
             count-=k;
         }
-        return dummy->next;
-        
+        return dummy->next;  
     }
 };
