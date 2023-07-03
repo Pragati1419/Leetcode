@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool buddyStrings(string s, string goal) {
-          if (s == goal)
+       if (s == goal)
             return (set<char>(s.begin(), s.end()).size() < s.size());
         int n = s.length();
         int l = 0, r = n-1;
@@ -13,6 +13,6 @@ public:
         if(l < r)
             swap(s[l], s[r]);
         
-        return s == goal;
+        return s == goal;    
     }
 };
