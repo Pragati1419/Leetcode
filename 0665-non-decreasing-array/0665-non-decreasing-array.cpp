@@ -11,7 +11,7 @@ public:
             } else {
                 nums[i] = nums[i + 1];
             }
-            ++count;
+            count++;
             if (count > 1) {
                 return false;
             }
