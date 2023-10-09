@@ -1,6 +1,5 @@
 class Solution {
 public:
-    
     vector<int> searchRange(vector<int>& nums, int target) {
          int n=nums.size();
         int start=0,end=n-1,first=-1;
@@ -23,8 +22,7 @@ public:
             }
             
         }
-		
-        int last=-1;
+		int last=-1;
         start=0,end=n-1;
         while(start<=end)
         {
